@@ -96,7 +96,7 @@ project-root/
 - [ ] Define project data structure (JSON or array)
 - [ ] Create `Project` card component with shadcn/ui
 - [ ] Show project title, description, tech stack, links
-- [ ] Add images/thumbnails
+- [ ] Add images/thumbnails and optional see demo link
 - [ ] Optional: Filter by tech/category
 
 ### Phase 8: Styling & Polish

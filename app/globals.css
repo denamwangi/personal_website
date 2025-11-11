@@ -67,3 +67,203 @@
   }
 }
 
+/* Code block styling */
+@layer components {
+  .prose pre {
+    @apply bg-muted rounded-lg p-4 overflow-x-auto border border-border;
+  }
+  
+  .prose code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm text-foreground;
+  }
+  
+  .prose pre code {
+    @apply bg-transparent p-0;
+    color: #1f2937 !important; /* Force dark color for all code in light mode */
+  }
+  
+  .prose :where(code):not(:where([class~="not-prose"] *))::before,
+  .prose :where(code):not(:where([class~="not-prose"] *))::after {
+    content: "";
+  }
+  
+  /* Syntax highlighting styles for highlight.js */
+  .prose pre code.hljs {
+    @apply bg-transparent;
+    display: block;
+    overflow-x: auto;
+    padding: 0;
+    color: #1f2937 !important; /* Force dark gray for better visibility in light mode */
+  }
+  
+  /* Base color for code blocks - will be overridden by syntax highlighting */
+  .prose pre code.hljs {
+    color: #1f2937 !important;
+  }
+  
+  /* Light mode syntax highlighting - fun vibrant colors like Cursor/VS Code */
+  /* These need to be more specific to override the base color */
+  .prose pre code.hljs .hljs-keyword,
+  .prose pre code.hljs .hljs-selector-tag,
+  .prose pre code.hljs .hljs-built_in,
+  .prose pre code.hljs .hljs-name,
+  .prose pre code.hljs .hljs-tag,
+  .prose pre code.hljs span.hljs-keyword,
+  .prose pre code.hljs span.hljs-selector-tag {
+    color: #d73a49 !important; /* Vibrant red/pink for keywords */
+  }
+  
+  .prose pre code.hljs .hljs-string,
+  .prose pre code.hljs .hljs-title,
+  .prose pre code.hljs .hljs-section,
+  .prose pre code.hljs .hljs-attribute,
+  .prose pre code.hljs .hljs-literal,
+  .prose pre code.hljs .hljs-template-tag,
+  .prose pre code.hljs .hljs-template-variable,
+  .prose pre code.hljs .hljs-type,
+  .prose pre code.hljs .hljs-addition,
+  .prose pre code.hljs span.hljs-string {
+    color: #032f62 !important; /* Deep blue for strings */
+  }
+  
+  .prose pre code.hljs .hljs-comment,
+  .prose pre code.hljs .hljs-quote,
+  .prose pre code.hljs .hljs-deletion,
+  .prose pre code.hljs .hljs-meta,
+  .prose pre code.hljs span.hljs-comment {
+    color: #6a737d !important; /* Muted gray for comments */
+  }
+  
+  .prose pre code.hljs .hljs-number,
+  .prose pre code.hljs span.hljs-number {
+    color: #005cc5 !important; /* Bright blue for numbers */
+  }
+  
+  .prose pre code.hljs .hljs-function,
+  .prose pre code.hljs .hljs-title.function_,
+  .prose pre code.hljs span.hljs-function {
+    color: #6f42c1 !important; /* Purple for functions */
+  }
+  
+  .prose pre code.hljs .hljs-variable,
+  .prose pre code.hljs .hljs-params,
+  .prose pre code.hljs span.hljs-variable {
+    color: #e36209 !important; /* Orange for variables */
+  }
+  
+  .prose pre code.hljs .hljs-property,
+  .prose pre code.hljs .hljs-attr,
+  .prose pre code.hljs span.hljs-property {
+    color: #005cc5 !important; /* Blue for properties */
+  }
+  
+  .prose pre code.hljs .hljs-class,
+  .prose pre code.hljs .hljs-title.class_,
+  .prose pre code.hljs span.hljs-class {
+    color: #6f42c1 !important; /* Purple for classes */
+  }
+  
+  .prose pre code.hljs .hljs-operator,
+  .prose pre code.hljs span.hljs-operator {
+    color: #d73a49 !important; /* Red for operators */
+  }
+  
+  /* Dark mode - lighter base text (only for unhighlighted text) */
+  .dark .prose pre code,
+  .dark .prose pre code.hljs {
+    color: #e5e7eb !important; /* Light gray for dark mode base */
+  }
+  
+  /* Ensure all text in dark mode code blocks is visible */
+  .dark .prose pre code *,
+  .dark .prose pre code.hljs * {
+    color: #e5e7eb !important; /* Light gray for all unhighlighted text */
+  }
+  
+  /* Dark mode syntax highlighting - vibrant colors like Cursor/VS Code */
+  .dark .prose pre code.hljs .hljs-keyword,
+  .dark .prose pre code.hljs .hljs-selector-tag,
+  .dark .prose pre code.hljs .hljs-built_in,
+  .dark .prose pre code.hljs .hljs-name,
+  .dark .prose pre code.hljs .hljs-tag,
+  .dark .prose pre code.hljs span.hljs-keyword {
+    color: #ff7b72 !important; /* Vibrant coral/red for keywords */
+  }
+  
+  .dark .prose pre code.hljs .hljs-string,
+  .dark .prose pre code.hljs .hljs-title,
+  .dark .prose pre code.hljs .hljs-section,
+  .dark .prose pre code.hljs .hljs-attribute,
+  .dark .prose pre code.hljs .hljs-literal,
+  .dark .prose pre code.hljs .hljs-template-tag,
+  .dark .prose pre code.hljs .hljs-template-variable,
+  .dark .prose pre code.hljs .hljs-type,
+  .dark .prose pre code.hljs .hljs-addition,
+  .dark .prose pre code.hljs span.hljs-string {
+    color: #a5d6ff !important; /* Bright cyan/blue for strings */
+  }
+  
+  .dark .prose pre code.hljs .hljs-comment,
+  .dark .prose pre code.hljs .hljs-quote,
+  .dark .prose pre code.hljs .hljs-deletion,
+  .dark .prose pre code.hljs .hljs-meta,
+  .dark .prose pre code.hljs span.hljs-comment {
+    color: #8b949e !important; /* Muted gray for comments */
+  }
+  
+  .dark .prose pre code.hljs .hljs-number,
+  .dark .prose pre code.hljs span.hljs-number {
+    color: #79c0ff !important; /* Bright blue for numbers */
+  }
+  
+  .dark .prose pre code.hljs .hljs-function,
+  .dark .prose pre code.hljs .hljs-title.function_,
+  .dark .prose pre code.hljs span.hljs-function {
+    color: #d2a8ff !important; /* Purple for functions */
+  }
+  
+  .dark .prose pre code.hljs .hljs-variable,
+  .dark .prose pre code.hljs .hljs-params,
+  .dark .prose pre code.hljs span.hljs-variable {
+    color: #ffa657 !important; /* Orange for variables */
+  }
+  
+  .dark .prose pre code.hljs .hljs-property,
+  .dark .prose pre code.hljs .hljs-attr,
+  .dark .prose pre code.hljs span.hljs-property {
+    color: #79c0ff !important; /* Blue for properties */
+  }
+  
+  .dark .prose pre code.hljs .hljs-class,
+  .dark .prose pre code.hljs .hljs-title.class_,
+  .dark .prose pre code.hljs span.hljs-class {
+    color: #d2a8ff !important; /* Purple for classes */
+  }
+  
+  .dark .prose pre code.hljs .hljs-operator,
+  .dark .prose pre code.hljs span.hljs-operator {
+    color: #ff7b72 !important; /* Coral for operators */
+  }
+  
+  /* Smooth transitions for interactive elements */
+  a, button, [role="button"] {
+    @apply transition-colors duration-200;
+  }
+  
+  /* Subtle animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+}
+
