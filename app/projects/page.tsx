@@ -10,7 +10,7 @@ export default function ProjectsPage() {
     <div className="max-w-6xl mx-auto">
       <h1 className="text-4xl font-bold mb-2">Projects</h1>
       <p className="text-muted-foreground mb-8">
-        A collection of projects I've worked on.
+        A collection of projects I&apos;ve worked on.
       </p>
 
       {projects.length === 0 ? (

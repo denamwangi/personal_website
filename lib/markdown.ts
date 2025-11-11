@@ -25,7 +25,7 @@ const postsDirectory = path.join(process.cwd(), "content/blog");
 
 // Configure marked with syntax highlighting
 marked.setOptions({
-  highlight: function (code, lang) {
+  highlight: function (code: string, lang?: string) {
     if (lang && hljs.getLanguage(lang)) {
       try {
         return hljs.highlight(code, { language: lang }).value;
@@ -40,7 +40,7 @@ marked.setOptions({
       return code; // Return unhighlighted code if highlighting fails
     }
   },
-});
+} as any);
 
 export interface PostMetadata {
   title: string;
@@ -78,12 +78,19 @@ export function getPostBySlug(slug: string): Post | null {
   // Convert markdown to HTML
   const html = marked(body) as string;
 
+  const attrs = attributes as {
+    title: string;
+    date: string;
+    description?: string;
+    tags?: string[];
+  };
+
   return {
     slug,
-    title: attributes.title as string,
-    date: attributes.date as string,
-    description: attributes.description as string | undefined,
-    tags: attributes.tags as string[] | undefined,
+    title: attrs.title,
+    date: attrs.date,
+    description: attrs.description,
+    tags: attrs.tags,
     content: body,
     html,
   };

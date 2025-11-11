@@ -17,7 +17,7 @@ export default function Home() {
           <h1 className="text-4xl md:text-5xl font-bold">Your Name</h1>
           <p className="text-xl text-muted-foreground">Your Title / Role</p>
           <p className="text-lg leading-relaxed">
-            Welcome to my personal website! I'm a passionate developer, designer, and creative problem solver.
+            Welcome to my personal website! I&apos;m a passionate developer, designer, and creative problem solver.
             This is where I share my thoughts, projects, and experiences.
           </p>
           
@@ -60,11 +60,11 @@ export default function Home() {
         <CardContent>
           <div className="prose prose-neutral dark:prose-invert max-w-none">
             <p>
-              I'm a developer with a passion for building beautiful, functional, and user-friendly applications.
+              I&apos;m a developer with a passion for building beautiful, functional, and user-friendly applications.
               I enjoy working with modern web technologies and am always eager to learn new tools and techniques.
             </p>
             <p>
-              When I'm not coding, you can find me exploring new technologies, contributing to open source projects,
+              When I&apos;m not coding, you can find me exploring new technologies, contributing to open source projects,
               or sharing knowledge with the developer community.
             </p>
           </div>
