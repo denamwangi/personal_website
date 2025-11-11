@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Personal Website",
+  title: "Dena",
   description: "Personal website with blog and projects",
 };
 

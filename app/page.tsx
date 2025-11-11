@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
@@ -7,15 +8,21 @@ export default function Home() {
     <div className="max-w-4xl mx-auto space-y-8">
       {/* Hero Section */}
       <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-        <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-border flex-shrink-0 bg-muted flex items-center justify-center" role="img" aria-label="Profile picture placeholder">
-          {/* Add your profile image: Replace this div with:
-              <Image src="/profile.jpg" alt="Profile" width={192} height={192} className="object-cover" />
-          */}
-          <div className="text-6xl font-bold text-muted-foreground" aria-hidden="true">?</div>
+        <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-border flex-shrink-0">
+          <div className="absolute inset-0 -translate-y-[0%]">
+            <Image
+              src="/profile.jpg"
+              alt="Profile picture"
+              width={192}
+              height={192}
+              className="object-cover w-full h-full"
+              priority
+            />
+          </div>
         </div>
         <div className="flex-1 space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold">Your Name</h1>
-          <p className="text-xl text-muted-foreground">Your Title / Role</p>
+          <h1 className="text-4xl md:text-5xl font-bold">Dena</h1>
+          <p className="text-xl text-muted-foreground"> engineer | data nerd | speaker </p>
           <p className="text-lg leading-relaxed">
             Welcome to my personal website! I&apos;m a passionate developer, designer, and creative problem solver.
             This is where I share my thoughts, projects, and experiences.
