@@ -4,8 +4,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Dena",
-  description: "Personal website with blog and projects",
+  title: "Dena Mwangi - Engineering Leader & AI Builder",
+  description: "Engineering leader building AI systems",
 };
 
 export default function RootLayout({
@@ -29,4 +29,3 @@ export default function RootLayout({
     </html>
   );
 }
-

@@ -10,7 +10,6 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 const navItems = [
   { name: "About", href: "/" },
-  { name: "Blog", href: "/blog" },
   { name: "Projects", href: "/projects" },
 ];
 
@@ -20,15 +19,12 @@ export function Nav() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between px-4">
-        <Link href="/" className="text-xl font-bold">
-          Dena
-        </Link>
-        
+      <div className="container flex h-16 items-center px-4">
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-6 ml-auto">
           {navItems.map((item) => {
-            const isActive = pathname === item.href || 
+            const isActive =
+              pathname === item.href ||
               (item.href !== "/" && pathname.startsWith(item.href));
             return (
               <Link
@@ -36,9 +32,7 @@ export function Nav() {
                 href={item.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-foreground/80",
-                  isActive
-                    ? "text-foreground"
-                    : "text-foreground/60"
+                  isActive ? "text-foreground" : "text-foreground/60"
                 )}
               >
                 {item.name}
@@ -57,7 +51,11 @@ export function Nav() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </Button>
         </div>
       </div>
@@ -67,7 +65,8 @@ export function Nav() {
         <div className="md:hidden border-t bg-background">
           <div className="container px-4 py-4 space-y-2">
             {navItems.map((item) => {
-              const isActive = pathname === item.href || 
+              const isActive =
+                pathname === item.href ||
                 (item.href !== "/" && pathname.startsWith(item.href));
               return (
                 <Link

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
@@ -22,16 +22,19 @@ export default function Home() {
         </div>
         <div className="flex-1 space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold">Dena</h1>
-          <p className="text-xl text-muted-foreground"> engineer | data nerd | speaker </p>
-          <p className="text-lg leading-relaxed">
+          <p className="text-xl text-muted-foreground">
+            {" "}
+            engineer | data nerd | speaker{" "}
+          </p>
+          {/* <p className="text-lg leading-relaxed">
             Welcome to my personal website! I&apos;m a passionate developer, designer, and creative problem solver.
             This is where I share my thoughts, projects, and experiences.
-          </p>
-          
+          </p> */}
+
           {/* Social Links */}
           <div className="flex gap-4 pt-2">
             <Link
-              href="https://github.com"
+              href="https://github.com/denamwangi"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -40,7 +43,7 @@ export default function Home() {
               <Github className="h-6 w-6" />
             </Link>
             <Link
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/dena-metili-mwangi"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -49,7 +52,7 @@ export default function Home() {
               <Linkedin className="h-6 w-6" />
             </Link>
             <Link
-              href="mailto:your.email@example.com"
+              href="mailto:hello@denamwangi.com"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Email"
             >
@@ -67,79 +70,39 @@ export default function Home() {
         <CardContent>
           <div className="prose prose-neutral dark:prose-invert max-w-none">
             <p>
-              I&apos;m a developer with a passion for building beautiful, functional, and user-friendly applications.
-              I enjoy working with modern web technologies and am always eager to learn new tools and techniques.
+              Hi! I&apos;m Dena, an engineering leader and product builder
+              exploring how AI, creativity, and design intersect to make
+              technology more human. I&apos;ve led product, growth, and
+              monetization engineering teams at Pinterest and Honeycomb.io,
+              building systems that turn complexity into clarity and drive
+              meaningful impact for users and businesses alike.
+            </p>
+            <h4>How I got here</h4>
+            <p>
+              I&apos;m a big fan of personal reinvention. After graduating from
+              Duke with a Masters in Economics, I worked in International
+              Development running field experiments and answering questions like
+              &ldquo;did all this money we spent make any difference?&rdquo;
+              (spoiler: only sometimes). Most recently at the World Bank. That
+              work shaped how I think about equity and meaningful impact in
+              tech.
+            </p>
+            <h4>Loves</h4>
+            <p>
+              I&apos;m endlessly curious about how people and systems connect. I
+              care about building tools that make the invisible visible,
+              designing technology that serves everyone, and using data as a
+              lens for empathy. I&apos;m passionate about community and good
+              conversations about fairness, design, and what technology could
+              be.
             </p>
             <p>
-              When I&apos;m not coding, you can find me exploring new technologies, contributing to open source projects,
-              or sharing knowledge with the developer community.
+              Also: Beyoncé, cats, coffee, cycling, and kindred spirits who
+              think deeply about how we build.
             </p>
           </div>
         </CardContent>
       </Card>
-
-      {/* Skills Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Skills & Technologies</CardTitle>
-          <CardDescription>Technologies and tools I work with</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="flex flex-wrap gap-2">
-            {[
-              "React",
-              "Next.js",
-              "TypeScript",
-              "Tailwind CSS",
-              "Node.js",
-              "Python",
-              "Git",
-              "Docker",
-            ].map((skill) => (
-              <span
-                key={skill}
-                className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm font-medium"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Experience/Interests Section */}
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Experience</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div>
-                <h3 className="font-semibold">Software Developer</h3>
-                <p className="text-sm text-muted-foreground">Company Name • 2020 - Present</p>
-                <p className="text-sm mt-2">
-                  Building and maintaining web applications using modern frameworks and best practices.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Interests</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="list-disc list-inside space-y-2 text-sm">
-              <li>Web Development</li>
-              <li>Open Source</li>
-              <li>UI/UX Design</li>
-              <li>Machine Learning</li>
-            </ul>
-          </CardContent>
-        </Card>
-      </div>
     </div>
   );
 }
